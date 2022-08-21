@@ -6,7 +6,10 @@ const checkForms = () => {
   const forms = [];
   const emailValidState = getEmailValidState();
   const countryValidState = getCountryValidState();
+  console.log(countryValidState.isValid)
   forms.push(emailValidState);
+  forms.push(countryValidState);
+
 
   clearErrorMessage();
 
@@ -47,8 +50,13 @@ const getEmailValidState = () => {
 };
 
 const getCountryValidState = () => {
-  
-}
+  const formValue = getFormValue("country");
+  return {
+    type: "country",
+    isValid: formValue != "--" && formValue != "Unknown Region"? true : false,
+    errorMsg: "not a valid country",
+  };
+};
 
 const getCountries = (lang = "en") => {
   const A = 65;
@@ -69,9 +77,9 @@ const getCountries = (lang = "en") => {
 
 const addCountryOptions = () => {
   const select = document.getElementsByName("country")[0];
-  const countries = Object.values(getCountries())
-  for(let i = 0; i< countries.length; i++ ){
-    let country = countries[i]
+  const countries = Object.values(getCountries());
+  for (let i = 0; i < countries.length; i++) {
+    let country = countries[i];
     const option = document.createElement("option");
     option.value = country;
     option.innerHTML = country;
