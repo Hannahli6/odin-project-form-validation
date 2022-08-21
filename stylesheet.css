@@ -29,7 +29,12 @@ body {
   height: 105px;
 }
 .form input {
-  width: 90%;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+.form select{
   padding: 15px;
   margin-top: 10px;
   border-radius: 5px;

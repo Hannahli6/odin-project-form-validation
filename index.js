@@ -1,4 +1,3 @@
-const formsElement = document.getElementsByClassName("form");
 const submitButton = document.getElementById("submit-btn");
 
 submitButton.addEventListener("click", () => checkForms());
@@ -6,6 +5,7 @@ submitButton.addEventListener("click", () => checkForms());
 const checkForms = () => {
   const forms = [];
   const emailValidState = getEmailValidState();
+  const countryValidState = getCountryValidState();
   forms.push(emailValidState);
 
   clearErrorMessage();
@@ -19,6 +19,8 @@ const checkForms = () => {
       formEl.appendChild(errorText);
     }
   });
+
+  console.log(getCountries());
 };
 
 const getFormValue = (formType) => {
@@ -29,10 +31,10 @@ const getFormValue = (formType) => {
 
 const clearErrorMessage = () => {
   const errorMessages = document.getElementsByClassName("error-message");
-  Array.from(errorMessages).forEach((errorMessage)=>{
+  Array.from(errorMessages).forEach((errorMessage) => {
     errorMessage.remove();
-  })
-}
+  });
+};
 
 const getEmailValidState = () => {
   const formValue = getFormValue("email");
@@ -44,4 +46,36 @@ const getEmailValidState = () => {
   };
 };
 
+const getCountryValidState = () => {
+  
+}
 
+const getCountries = (lang = "en") => {
+  const A = 65;
+  const Z = 90;
+  const countryName = new Intl.DisplayNames([lang], { type: "region" });
+  const countries = {};
+  for (let i = A; i <= Z; ++i) {
+    for (let j = A; j <= Z; ++j) {
+      let code = String.fromCharCode(i) + String.fromCharCode(j);
+      let name = countryName.of(code);
+      if (code !== name) {
+        countries[code] = name;
+      }
+    }
+  }
+  return countries;
+};
+
+const addCountryOptions = () => {
+  const select = document.getElementsByName("country")[0];
+  const countries = Object.values(getCountries())
+  for(let i = 0; i< countries.length; i++ ){
+    let country = countries[i]
+    const option = document.createElement("option");
+    option.value = country;
+    option.innerHTML = country;
+    select.appendChild(option);
+  }
+};
+addCountryOptions();
