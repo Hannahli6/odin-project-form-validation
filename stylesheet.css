@@ -7,29 +7,53 @@ h3 {
 body {
   background-color: rgb(193, 177, 248);
 }
+span{
+  font-size: 15px;
+}
+.form-wrapper{
+  display: flex;
+  max-width: 1000px;
+  height: 80vh;
+  margin: auto;
+  margin-top: 10vh;
+}
 .form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 600px;
-  margin: 50px auto 0 auto;
-  padding: 70px 0px 70px 0px;
-  border-radius: 10px;
+  width: 50%;
+  padding-top: 45px;
   background-color: rgb(255, 255, 255);
+}
+.form-container h3{
+  font-size: 25px;
+  margin: 0;
+  color: rgb(75, 76, 78);
+}
+.sign-up-image{
+  position: relative;
+  background-color: #E7BECA;
+  width: 50%;
+  height: 100%;
+}
+.sign-up-image img{
+  position: absolute;
+  top:25%;
+  width: 100%;
 }
 .forms {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 70%;
 }
 .form {
-  margin-top: 10px;
+  margin-top: 36px;
   display: flex;
   flex-direction: column;
-  height: 105px;
+  height: 70px;
 }
 .form input {
-  padding: 15px;
+  padding: 10px;
   margin-top: 10px;
   border-radius: 5px;
   border: 1px solid gray;
@@ -44,14 +68,15 @@ body {
   font-size: 15px;
   width: 100%;
   padding: 20px;
-  margin-top: 20px;
+  margin-top: 30px;
   border-radius: 5px;
   border: 1px solid rgb(96, 74, 167);
   cursor: pointer;
-  background-color: rgb(193, 177, 248);
+  background-color: #E7BECA;
 }
 
 .error-message{
+  font-size: 12px;
   margin-top: 5px;
   color: rgb(238, 15, 15);
 }

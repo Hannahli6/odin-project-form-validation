@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheet.css" />
+    <title>Sign up Form</title>
+  </head>
+  <body>
+    <div class="form-wrapper">
+      <div class="sign-up-image">
+        <img src="/dist/img/bg.png"/>
+      </div>
+      <div class="form-container">
+        <h3>Sign up</h3>
+        <div class="forms">
+          <div class="form email-form">
+            <span>Email</span>
+            <input type="email" />
+          </div>
+          <div class="form country-form">
+            <span>Country</span>
+            <select name="country">
+              <option value="--">--</option>
+            </select>
+          </div>
+          <div class="form zip-code-form">
+            <span>Zip Code</span>
+            <input type="text" />
+          </div>
+          <div class="form password-form">
+            <span>Password</span>
+            <input type="password" />
+          </div>
+          <div class="form confirm-password-form">
+            <span>Confirm Password</span>
+            <input type="password" />
+          </div>
+          <button id="submit-btn">submit</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
