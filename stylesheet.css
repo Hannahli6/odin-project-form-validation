@@ -27,7 +27,7 @@ span{
 }
 .form-container h3{
   font-size: 25px;
-  margin: 0;
+  margin-bottom: 20px;
   color: rgb(75, 76, 78);
 }
 .sign-up-image{
@@ -47,13 +47,19 @@ span{
   width: 70%;
 }
 .form {
-  margin-top: 36px;
+  margin-bottom: 36px;
   display: flex;
   flex-direction: column;
   height: 70px;
 }
+.invalid{
+  border: 1px solid rgb(218, 24, 24) !important; 
+}
+.valid{
+  border: 1px solid rgb(17, 143, 73) !important;
+}
 .form input {
-  padding: 10px;
+  padding: 15px;
   margin-top: 10px;
   border-radius: 5px;
   border: 1px solid gray;
@@ -68,15 +74,19 @@ span{
   font-size: 15px;
   width: 100%;
   padding: 20px;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   border-radius: 5px;
   border: 1px solid rgb(96, 74, 167);
   cursor: pointer;
   background-color: #E7BECA;
+  transition: 0.5s ease;
 }
-
+#submit-btn:hover{
+  background-color: #E882A2;
+ 
+}
 .error-message{
   font-size: 12px;
-  margin-top: 5px;
+  margin-top: 2px;
   color: rgb(238, 15, 15);
 }
